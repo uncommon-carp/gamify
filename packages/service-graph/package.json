@@ -1,0 +1,10 @@
+{
+    "name": "service-graph",
+    "version": "0.1.0",
+    "dependencies": {
+        "apollo-server-core": "^3.10.2",
+        "apollo-server-lambda": "^3.10.2",
+        "graphql": "^16.6.0",
+        "interfaces-graph": "*"
+    }
+}
