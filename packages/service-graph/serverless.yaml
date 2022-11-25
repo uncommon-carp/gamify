@@ -1,4 +1,4 @@
-service: gamify/service-graph
+service: service-graph
 provider:
     name: aws
     runtime: nodejs14.x
@@ -16,3 +16,30 @@ functions:
                   path: /
                   method: get
                   cors: true
+
+custom:
+    webpack:
+        webpackConfig: ../../webpack.sls.ts
+    memory:
+        prd: 1536
+        other: 1024 # default lambda memorySize
+    prune:
+        automatic: true
+        number: 5
+
+plugins:
+    - serverless-webpack
+
+resources:
+    Resources:
+        ReactTodo:
+            Type: AWS::DynamoDB::Table
+            Properties:
+                TableName: TSTodo
+                BillingMode: PAY_PER_REQUEST
+                AttributeDefinitions:
+                    - AttributeName: id
+                      AttributeType: S
+                KeySchema:
+                    - AttributeName: id
+                      KeyType: HASH

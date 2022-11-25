@@ -5,7 +5,7 @@ export interface UserAuthInput {
 
 export interface User extends UserAuthInput {
     firstName: String;
-    lastName: String;
+    lastName?: String;
     sheet: String;
 }
 

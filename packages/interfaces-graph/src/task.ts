@@ -1,8 +1,7 @@
 export interface Task {
     title: String;
-    difficulty: String;
-    timeToComplete: String;
     complete: Boolean;
+    quest: String;
 }
 
 export interface TaskItem extends Task {

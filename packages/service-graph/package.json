@@ -5,6 +5,7 @@
         "apollo-server-core": "^3.10.2",
         "apollo-server-lambda": "^3.10.2",
         "graphql": "^16.6.0",
+        "graphql-tools": "^8.3.12",
         "interfaces-graph": "*"
     }
 }

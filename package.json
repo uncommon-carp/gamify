@@ -26,6 +26,7 @@
     "webpack": "^5.74.0"
   },
   "dependencies": {
-    "aws-sdk": "^2.1237.0"
+    "aws-sdk": "^2.1237.0",
+    "serverless-webpack": "^5.10.0"
   }
 }
