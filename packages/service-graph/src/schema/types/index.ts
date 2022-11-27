@@ -4,5 +4,5 @@ export * from './questType';
 export * from './itemType';
 export * from './taskType';
 export * from './skillType';
-export * from './query';
+export * from './rootTypes';
 export * from './mutation';

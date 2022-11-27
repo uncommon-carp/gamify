@@ -1,12 +1,15 @@
 import { GraphQLObjectType, GraphQLString } from 'graphql';
-import { sheetType } from './';
+import { SchemaGenerator } from '../utils/schemaGenerator';
 
-export const userType = new GraphQLObjectType({
-    name: 'User',
-    fields: () => ({
-        firstName: { type: GraphQLString },
-        lastName: { type: GraphQLString },
-        email: { type: GraphQLString },
-        sheet: { type: sheetType },
-    }),
-});
+export const createUserType = (types: SchemaGenerator) => {
+    const User = new GraphQLObjectType({
+        name: 'User',
+        fields: () => ({
+            firstName: { type: GraphQLString },
+            lastName: { type: GraphQLString },
+            email: { type: GraphQLString },
+            sheet: { type: GraphQLString },
+        }),
+    });
+    types.add(User);
+};

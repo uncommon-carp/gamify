@@ -11,13 +11,14 @@ import {
     ThunkObjMap,
 } from 'graphql';
 
-import { Query, Mutation } from './types';
+import { createRootTypes, createSheetTypes, createUserType } from './types';
 import { addResolversToSchema } from '@graphql-tools/schema';
 
 import {
     createResolvers,
     resolverCollection,
 } from './resolvers/createResolvers';
+import { SchemaGenerator } from './utils/schemaGenerator';
 
 export const addFieldsToExistingType = (
     type: GraphQLObjectType,
@@ -51,12 +52,19 @@ export const addFieldsToExistingType = (
 //     };
 // });
 
+const types = new SchemaGenerator();
+
+createRootTypes(types);
+createSheetTypes(types);
+createUserType(types);
+
 const resolvers = createResolvers(resolverCollection);
 
 function createSchema() {
     const schema = new GraphQLSchema({
-        query: Query,
-        mutation: Mutation,
+        types: types.list(),
+        query: types.getSpecificType('Query', isObjectType),
+        mutation: types.getSpecificType('Mutation', isObjectType),
     });
 
     return schema;

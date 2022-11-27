@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/service-graph/dev/1669350998032-2022-11-25T04:36:38.032Z/service-graph.zip"
+          "S3Key": "serverless/service-graph/dev/1669564924593-2022-11-27T16:02:04.593Z/service-graph.zip"
         },
         "Handler": "src/graph.graphqlHandler",
         "Runtime": "nodejs14.x",
@@ -179,14 +179,14 @@
         "GraphqlLogGroup"
       ]
     },
-    "GraphqlLambdaVersionPnTERptBg8brgbfpDyidS2VeAr3w9Q22zA434TLX8": {
+    "GraphqlLambdaVersion4Zau3rI15fFUx5mZd8VoqJs4h3hPDQap7LoiZvXsyo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GraphqlLambdaFunction"
         },
-        "CodeSha256": "UsWZBQ4JLR/reKQbDWvxL7Git0E1W1lwqByYoWbG4oI="
+        "CodeSha256": "RfcyW0YVQLOttIMrpmJQR3KyvGATgdBgbTZkRJHFJY4="
       }
     },
     "ApiGatewayRestApi": {
@@ -347,7 +347,7 @@
         "GraphqlLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1669350992842": {
+    "ApiGatewayDeployment1669564919388": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -397,25 +397,6 @@
           ]
         }
       }
-    },
-    "ReactTodo": {
-      "Type": "AWS::DynamoDB::Table",
-      "Properties": {
-        "TableName": "TSTodo",
-        "BillingMode": "PAY_PER_REQUEST",
-        "AttributeDefinitions": [
-          {
-            "AttributeName": "id",
-            "AttributeType": "S"
-          }
-        ],
-        "KeySchema": [
-          {
-            "AttributeName": "id",
-            "KeyType": "HASH"
-          }
-        ]
-      }
     }
   },
   "Outputs": {
@@ -430,7 +411,7 @@
     "GraphqlLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GraphqlLambdaVersionPnTERptBg8brgbfpDyidS2VeAr3w9Q22zA434TLX8"
+        "Ref": "GraphqlLambdaVersion4Zau3rI15fFUx5mZd8VoqJs4h3hPDQap7LoiZvXsyo"
       },
       "Export": {
         "Name": "sls-service-graph-dev-GraphqlLambdaFunctionQualifiedArn"
